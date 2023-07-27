@@ -1,0 +1,410 @@
+  .dash {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+    position: relative; /* 添加相對定位，以便內部元素可以相對於該區塊定位 */
+    overflow-y: auto; /* 垂直捲動 */
+  }
+
+  .dashbar {
+    background-color: #87ceeb7d;
+    padding: 5px;
+    margin: 1px;
+    border-radius: 5px;
+  }
+
+  .timebar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 12px; /* 調整字體大小，使其適應區塊大小 */
+  }
+
+  .dashout {
+    margin-top: 1%;
+    margin-right: auto;
+  }
+
+  .dashbar-icon {
+    width: 10px;
+    height: 10px;
+    margin-left: inherit;
+  }
+
+  .dashbar-title {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .in-dash-text {
+    font-size: 70px;
+    font-weight: bold;
+  }
+
+  .in-dash-text-all {
+    font-size: 55px;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+
+
+
+
+
+/* .dash {
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 98%;
+} */
+
+/* .dashbar {
+  background-color: #87ceeb7d;
+  padding: 5px;
+  margin: 1px;
+  border-radius: 5px;
+} */
+
+/* .timebar {
+float: right;
+} */
+
+/* .dashout {
+  margin-top: 1%;
+  margin-right: auto;
+  display: flex;
+
+} */
+
+/* .dashbar-icon {
+  width: 10px;
+  height: 10px;
+  margin-left: inherit;
+
+}
+
+.dashbar-title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.in-dash-text {
+  margin-top: 20%;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.in-dash-text-all {
+  font-size: 55px;
+  font-weight: bold;
+  font-family: sans-serif;
+} */
+
+
+
+.health {
+  /*     margin-top: 2%; */
+  margin-left: 25%;
+}
+
+.health-text {
+  /*   margin-left: 19%; */
+  padding-top: 60px;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.health-text-all {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.version-text {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chart {
+  margin-top: 2px;
+  margin-left: 25%;
+  margin-right: auto;
+  text-align: center;
+  width: auto; 
+  height: auto;
+}
+
+.volt {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+}
+.chart-volt-all {
+  margin-top: 2px;
+  margin-left: 5%;
+}
+
+
+
+.long-chart {
+  margin-top: 2px;
+  /*     margin-left: 28%; */
+  /*     width: 90%; */
+  height: 85%;
+}
+
+.long-half {
+  /* width: 50%;
+  height: 100%;
+  float: left; */
+  padding: 50px;
+}
+
+.long-half-all {
+  /* width: 50%;
+  height: 100%;
+  float: left; */
+  padding: 35px;
+}
+
+.button-NoSel {
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 2px;
+}
+
+.button-Sel {
+  background-color: #9ccfe3;
+  font-weight: bold;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 2px;
+}
+
+.button-Change {
+  background-color: #4CAF50;
+  font-weight: bold;
+  border-radius: 12px;
+  font-size: 17px;
+}
+
+.twothird-right {}
+
+
+
+/* vertical scroll bar START */
+
+
+.slider-valuetext h3 {
+  color: black;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+/* æº«åº¦è¨ˆæ¨™é¡Œè‡ªå¤§å° */
+.slider-temperature .label,
+.slider-seek .label {
+  font-weight: bold;
+  font-size: 105%;
+}
+
+.slider-temperature svg,
+.slider-seek svg {
+  forced-color-adjust: auto;
+}
+
+.slider-temperature text,
+.slider-seek text {
+  font-weight: bold;
+  fill: currentcolor;
+  font-family: sans-serif;
+}
+
+.slider-temperature {
+  width: 90px;
+}
+
+.slider-temperature,
+.slider-seek {
+  margin-top: 1em;
+  padding: 6px;
+  color: black;
+}
+
+.slider-temperature .value,
+.slider-slider .value {
+  position: relative;
+  top: 20px;
+  height: 1.5em;
+  font-size: 80%;
+}
+
+/* Valueå­—é«”å¤§å° */
+.slider-temperature .temp-value,
+.slider-seek .temp-value {
+  padding-left: 24px;
+  font-size: 130%;
+}
+
+.slider-temperature .rail,
+.slider-seek .rail {
+  stroke: currentcolor;
+  stroke-width: 2px;
+  fill: currentcolor;
+  fill-opacity: 0.25;
+}
+
+.slider-temperature .thumb,
+.slider-seek .thumb {
+  stroke-width: 0;
+  fill: currentcolor;
+}
+
+.slider-temperature .focus-ring,
+.slider-seek .focus-ring {
+  stroke: currentcolor;
+  stroke-opacity: 0;
+  fill-opacity: 0;
+  stroke-width: 3px;
+  display: none;
+}
+
+.slider-temperature .slider-group {
+  touch-action: pan-x;
+}
+
+.slider-seek .slider-group {
+  touch-action: pan-y;
+}
+
+.slider-seek .slider-group .value {
+  display: none;
+}
+
+/* Focus and hover styling */
+
+.slider-seek.focus [role="slider"],
+.slider-temperature.focus [role="slider"] {
+  color: #005a9c;
+}
+
+.slider-temperature [role="slider"]:focus,
+.slider-seek [role="slider"]:focus {
+  outline: none;
+}
+
+.slider-temperature [role="slider"]:focus .focus-ring,
+.slider-seek [role="slider"]:focus .focus-ring {
+  display: block;
+  stroke-opacity: 1;
+}
+
+.slider-seek [role="slider"]:focus .value {
+  display: block;
+}
+
+/* vertical scroll bar END */
+
+/* in dash scroll list START */
+
+.scroll-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scroll-list li {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.scroll-list li:hover {
+  background-color: #f0f0f0;
+}
+/*  in dash scroll list START */
+
+/* info page START */
+  .boxStatus {
+    padding-right: 3px;
+    padding-top: 3px;
+    font-weight: bold;
+    /* flex: 1; */
+
+  }
+
+  .scroll-list-info {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .scroll-list-info li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+
+
+  .boxContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+
+  
+
+  /* info page end */
+
+  /* overview2 page start */
+
+  .ServoDeg {
+    text-align: center;
+    font-weight: bold;
+    font-size:500%;
+    font-family:none;
+  }
+
+  .slider-contianer{
+    text-align: center;
+    margin-top: 15%;
+  }
+
+  .slider-cont{
+    margin-top: 7%;
+    font-size:20px;
+  }
+
+
+  /* page3 */
+
+  .water{
+    width: auto; 
+    height: auto;
+    text-align: center;
+  }
