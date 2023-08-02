@@ -1,13 +1,13 @@
 $(document).ready(function () {
     // Load the MLB info from the JSON file
-    $.getJSON("mlb_info.json", function (data) {
+    $.getJSON("mlb_result.json", function (data) {
         // Populate the resultID_select dropdown with options
         var select = $("#resultID_select");
         $.each(data[2].data, function (index, item) {
             select.append(
                 $("<option></option>")
-                    .attr("value", item.result_ID)
-                    .text("Result ID " + item.result_ID)
+                    .attr("value", item.result_UE_BS_info_ID)
+                    .text("Result ID " + item.result_UE_BS_info_ID)
             );
         });
 
@@ -76,8 +76,8 @@ $(document).ready(function () {
                 options: {
                     responsive: true,
                     maintainAspectRatio: true, // Set to false to control the chart's size
-                    width: 800, // 設定圖形的寬度
-                    height: 800, // 設定圖形的高度
+                    // width: 800, // 設定圖形的寬度
+                    // height: 800, // 設定圖形的高度
                     scales: {
                         y: {
                             beginAtZero: true
@@ -91,7 +91,7 @@ $(document).ready(function () {
         $("#resultID_select").on("change", function () {
             var selectedResultID = $(this).val();
             var selectedData = data[2].data.find(
-                (item) => item.result_ID === selectedResultID
+                (item) => item.result_UE_BS_info_ID === selectedResultID
             );
 
             var CIO_table = JSON.parse(selectedData.CIO_table);
