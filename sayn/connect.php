@@ -1,7 +1,7 @@
 <?php
-    $hostname='127.0.0.1';
-    $username=' ';
-    $password=' ';
+    $hostname='120.126.10.188';
+    $username='allUser';
+    $password='compalcgu';
     $database='mlb';
     $link=mysqli_connect($hostname,$username,$password,$database);
     if($link){
