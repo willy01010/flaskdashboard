@@ -95,7 +95,15 @@ function switchChartData() {
     chart.options.scales.x.title.text = "Number of UE";
 
     chart.update();
+
+    // 顯示目前索引
+    var indexValue = currentChartDataIndex + 1; // 索引從 0 開始，顯示時加 1
+    var indexElement = document.getElementById("index-value");
+    indexElement.textContent = indexValue.toString();
 }
+
+// ... (您的其餘程式碼)
+
 
 // 初始化畫面時的資料索引
 var currentChartDataIndex = 0;
@@ -112,7 +120,7 @@ generateTableData_mlb();
 
 
 // 每2秒自動切換資料
-setInterval(switchChartData, 30000);
+setInterval(switchChartData, 2000);
 
 
 // Function to generate data for the second table
