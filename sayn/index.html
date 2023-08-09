@@ -7,6 +7,8 @@
     <title>MLB Info Viewer</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,9 +17,6 @@
     <div>
         <label for="resultSelect">Select Result:</label>
         <select id="resultID_select"></select>
-        <!-- <h1>            </h1> -->
-        <!-- <button id="barChartBtn">Bar Chart</button>
-        <button id="CIOChartBtn">CIO Table</button> -->
     </div>
 
     <div class="w3-third dashout">
@@ -50,17 +49,17 @@
     <div class="w3-third dashout">
         <!-- border:2px red solid; border:2px blue solid;-->
         <div class=" w3-card dash" style="height: 417.6px;">
-            <!-- style="height: 250px;" -->
             <div class="dashbar">
                 <div class="dashbar-title">
                     BS Total Throughput
                 </div>
                 <!-- <img class="dashbar-icon" src="https://img.icons8.com/ios-filled/10/null/menu-2.png"/> -->
             </div>
-            <div id="line_chart-container"></div>
+            <div> 
+                <canvas id="linear_chart-container"></canvas>
+            </div>
         </div>
     </div>
-
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
