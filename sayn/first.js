@@ -102,8 +102,6 @@ function switchChartData() {
     indexElement.textContent = indexValue.toString();
 }
 
-// ... (您的其餘程式碼)
-
 
 // 初始化畫面時的資料索引
 var currentChartDataIndex = 0;
