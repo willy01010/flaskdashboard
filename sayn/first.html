@@ -1,81 +1,49 @@
-<!-- HTML file for the web page -->
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Demo</title>
-    <!-- Link to the CSS file -->
     <link rel="stylesheet" href="first.css">
-    <!-- Link to the Chart.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
 </head>
+
 <body>
-    <!-- Create a header element -->
     <header>
         <h1>Current Data Without DB Connection</h1>
         <h4>Last Update: 2023/08/01 15:26:00</h4>
     </header>
-    <!-- Create a main element -->
     <main>
         <div id="current-index">
+            <label for="resultSelect">Select Result:</label>
+            <select id="resultID_select"></select>
+            &emsp;&emsp;
             Current Data Index: <span id="index-value">1</span> <!-- 初始值設為 1，因為索引從 0 開始 -->
         </div>
-        <!-- Create a section element for the first chart -->
         <section>
-            <!-- Create a canvas element for the first chart -->
-            <canvas id="chart"></canvas>
-        </section>
-        <!-- Create a section element for the second table -->
-        <section>
-            <!-- Create a table element for the second table -->
-            <table id="table2">
-                <!-- Create a table head element for the second table -->
-                <thead>
-                    <!-- Create a table row element for the table head -->
-                    <tr>
-                        <!-- Create table cells for the table head -->
-                        <th>Result ID</th>
-                        <th>Computer ID</th>
-                        <th>Date</th>
-                        <th>Spent Time</th>
-                        <th>Init TP</th>
-                        <th>MLB TP</th>
-                        <th>UE Init Dist</th>
-                        <th>UE MLB Dist</th>
-                        <th>CIO Table</th>
-                        <th>Init Satisfied 1_1</th>
-                        <th>Init Satisfied 0_6</th>
-                        <th>Init Satisfied 0_1</th>
-                        <th>MLB Satisfied 1_1</th>
-                        <th>MLB Satisfied 0_6</th>
-                        <th>MLB Satisfied 0_1</th>
-                    </tr>
-                </thead>
-                <!-- Create a table body element for the second table -->
-                <tbody id="table2-body">
-                    <!-- The table body will be filled by JavaScript -->
-                </tbody>
-            </table>
-        </section>
-        <!-- Create a section element for the third table -->
-        <section>
-            <table id="table3">
-                <thead>
-                    <tr>
-                        <th>Group_ID</th>
-                        <th>Demand_num_1_1</th>
-                        <th>Demand_num_0_6</th>
-                        <th>Demand_num_0_1</th>
-                    </tr>
-                </thead>
-                <tbody id="table3-body">
-
-                </tbody>
-            </table>
+            <div style="display: flex; width: 100%;">
+                <div class="w3-container" style="width: 20%;">
+                    <div class="button-container" style="flex-direction: column;">
+                        <button class="toggle-button" data-dataset="Init Satisfied 1_1">Toggle Init Satisfied
+                            1_1</button><br>
+                        <button class="toggle-button" data-dataset="MLB Satisfied 1_1">Toggle MLB Satisfied
+                            1_1</button><br>
+                        <button class="toggle-button" data-dataset="Init Satisfied 0_6">Toggle Init Satisfied
+                            0_6</button><br>
+                        <button class="toggle-button" data-dataset="MLB Satisfied 0_6">Toggle MLB Satisfied
+                            0_6</button><br>
+                        <button class="toggle-button" data-dataset="Init Satisfied 0_1">Toggle Init Satisfied
+                            0_1</button><br>
+                        <button class="toggle-button" data-dataset="MLB Satisfied 0_1">Toggle MLB Satisfied 0_1</button>
+                    </div>
+                </div>
+                <div style="width: 73%;">
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
         </section>
     </main>
-    <!-- Link to the JavaScript file -->
     <script src="first.js"></script>
 </body>
+
 </html>

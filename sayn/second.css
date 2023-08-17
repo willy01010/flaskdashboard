@@ -101,3 +101,19 @@ td {
     font-size: 20px;
     font-weight: bold;
 }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 頂部對齊 */
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-container label {
+    margin-right: 10px;
+}

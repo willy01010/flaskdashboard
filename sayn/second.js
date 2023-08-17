@@ -10,7 +10,129 @@ $(document).ready(function () {
                     .text("Result ID " + item.result_UE_BS_info_ID)
             );
         });
-        //                                                                             CIO Table Chart
+        //CIO Table Chart
+        var resultIDs = data[2].data.map((item) => item.result_UE_BS_info_ID);
+        var currentIndex = 0;
+
+
+        function updateCharts() {
+            var selectedResultID = resultIDs[currentIndex];
+            $("#resultID_select").val(selectedResultID).trigger("change");
+
+            currentIndex = (currentIndex + 1) % resultIDs.length;
+        }
+
+        setInterval(updateCharts, 2000);
+
+        function check_SelectBox() {
+            var on3 = '';
+            var on2 = '';
+            var on1 = '';
+            var on0 = '';
+            if ((document.getElementById('showCIO').checked == true &&
+                document.getElementById('showDistribution').checked == true &&
+                document.getElementById('showThroughput').checked == true) ||
+                (document.getElementById('showCIO').checked == true &&
+                    document.getElementById('showDistribution').checked == true &&
+                    document.getElementById('showThroughput').checked == true) ||
+                (document.getElementById('showCIO').checked == true &&
+                    document.getElementById('showDistribution').checked == true &&
+                    document.getElementById('showThroughput').checked == true)
+            ) {
+                document.getElementById('UE_Dist-chart').className = "w3-third dashout"
+                document.getElementById('CIO_table-chart').className = "w3-third dashout"
+                document.getElementById('BS_Thro-chart').className = "w3-third dashout"
+                return on3;
+            }
+
+            else if ((document.getElementById('showCIO').checked == true &&
+                document.getElementById('showDistribution').checked == true &&
+                document.getElementById('showThroughput').checked == false) ||
+                (document.getElementById('showCIO').checked == true &&
+                    document.getElementById('showDistribution').checked == false &&
+                    document.getElementById('showThroughput').checked == true) ||
+                (document.getElementById('showCIO').checked == false &&
+                    document.getElementById('showDistribution').checked == true &&
+                    document.getElementById('showThroughput').checked == true)
+            ) {
+
+                document.getElementById('UE_Dist-chart').className = "w3-half dashout"
+                document.getElementById('CIO_table-chart').className = "w3-half dashout"
+                document.getElementById('BS_Thro-chart').className = "w3-half dashout"
+                return on2;
+            }
+
+            else if ((document.getElementById('showCIO').checked == true &&
+                document.getElementById('showDistribution').checked == false &&
+                document.getElementById('showThroughput').checked == false) ||
+                (document.getElementById('showCIO').checked == false &&
+                    document.getElementById('showDistribution').checked == true &&
+                    document.getElementById('showThroughput').checked == false) ||
+                (document.getElementById('showCIO').checked == false &&
+                    document.getElementById('showDistribution').checked == false &&
+                    document.getElementById('showThroughput').checked == true)
+            ) {
+                document.getElementById('UE_Dist-chart').className = "w3-twothird dashout"
+                document.getElementById('CIO_table-chart').className = "w3-twothird dashout"
+                document.getElementById('BS_Thro-chart').className = "w3-twothird dashout"
+                return on1;
+            }
+
+            else if ((document.getElementById('showCIO').checked == false &&
+            document.getElementById('showDistribution').checked == false &&
+            document.getElementById('showThroughput').checked == false) ||
+            (document.getElementById('showCIO').checked == false &&
+                document.getElementById('showDistribution').checked == false &&
+                document.getElementById('showThroughput').checked == false) ||
+            (document.getElementById('showCIO').checked == false &&
+                document.getElementById('showDistribution').checked == false &&
+                document.getElementById('showThroughput').checked == false)
+        )  {
+
+                // document.getElementById('UE_Dist-chart').className = "w3-half dashout"
+                // document.getElementById('CIO_table-chart').className = "w3-half dashout"
+                // document.getElementById('BS_Thro-chart').className = "w3-half dashout"
+                return on0;
+            }
+
+        }
+
+
+        // Event listeners for checkboxes
+        $("#showCIO").change(function () {
+
+            if (this.checked) {
+                $("#CIO_table-chart").show();
+                check_SelectBox();
+            } else {
+                $("#CIO_table-chart").hide();
+                check_SelectBox();
+            }
+        });
+
+        $("#showDistribution").change(function () {
+            if (this.checked) {
+                $("#UE_Dist-chart").show();
+                check_SelectBox();
+
+            } else {
+                $("#UE_Dist-chart").hide();
+                check_SelectBox();
+
+            }
+        });
+
+        $("#showThroughput").change(function () {
+            if (this.checked) {
+                $("#BS_Thro-chart").show();
+                check_SelectBox();
+
+            } else {
+                $("#BS_Thro-chart").hide();
+                check_SelectBox();
+
+            }
+        });
 
         // Function to display the CIO table
         function displayCIOTable(CIO_table) {

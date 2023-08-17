@@ -19,19 +19,19 @@ header {
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
 }
 
 /* Style the section element */
 section {
-    width: 80%;
-    margin: 20px;
+    width: 100%;
+    /* margin: 20px; */
 }
 
 /* Style the canvas element */
-canvas {
+/* canvas {
     border: 1px solid black;
-}
+} */
 
 /* Style the table element */
 table {
@@ -40,7 +40,8 @@ table {
 }
 
 /* Style the table cells */
-td, th {
+td,
+th {
     border: 1px solid black;
     padding: 10px;
     text-align: center;
@@ -51,11 +52,14 @@ table {
     border-collapse: collapse;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #ccc;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
 }
 
@@ -71,4 +75,73 @@ tbody tr:nth-child(odd) {
 
 tbody tr:nth-child(even) {
     background-color: #d9d9d9;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    /*水平置中 */
+    align-items: center;
+    /*垂直置中*/
+    height: 100%;
+    /* 設置容器高度 */
+}
+
+.toggle-button {
+    padding: 10px 30px;
+    /* 設置按鈕的內邊距，調整大小 */
+    font-size: 16px;
+    /* 設置按鈕的字體大小 */
+    border: 2px;
+    border-radius: 5px;
+    /* margin: 5px; */
+    /* 設置按鈕間的間距 */
+    cursor: pointer;
+    width: 80%;
+    /* 設置按鈕寬度為100% */
+
+}
+
+@media (max-width: 966px) {
+    /* 在小於等於 768px 的螢幕尺寸下，調整按鈕的字體大小 */
+    .toggle-button {
+        font-size: 1vw;
+    }
+}
+
+/* #006000", "#00EC00", "#28004D", "#9F35FF", "#000093", "#7D7DFF */
+.toggle-button[data-dataset="Init Satisfied 1_1"] {
+    background-color: #006000;
+    /* 設置按鈕的背景顏色 */
+    color: #fff;
+    /* 設置按鈕的文字顏色 */
+}
+
+.toggle-button[data-dataset="MLB Satisfied 1_1"] {
+    background-color: #00EC00;
+    color: #fff;
+}
+
+.toggle-button[data-dataset="Init Satisfied 0_6"] {
+    background-color: #28004D;
+    /* 設置按鈕的背景顏色 */
+    color: #fff;
+    /* 設置按鈕的文字顏色 */
+}
+
+.toggle-button[data-dataset="MLB Satisfied 0_6"] {
+    background-color: #9F35FF;
+    color: #fff;
+}
+
+.toggle-button[data-dataset="Init Satisfied 0_1"] {
+    background-color: #000093;
+    /* 設置按鈕的背景顏色 */
+    color: #fff;
+    /* 設置按鈕的文字顏色 */
+}
+
+.toggle-button[data-dataset="MLB Satisfied 0_1"] {
+    background-color: #7D7DFF;
+    color: #fff;
 }
