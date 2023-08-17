@@ -1,7 +1,7 @@
 <?php
-    $hostname='127.0.0.1';
-    $username=' ';
-    $password=' ';
+    $hostname='localhost';
+    $username='root';
+    $password='12345678';
     $database='mlb';
     $link=mysqli_connect($hostname,$username,$password,$database);
     if($link){

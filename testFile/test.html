@@ -1,1 +1,22 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js Example</title>
+    <!-- 引用 Chart.js 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- 引用你的 test.js 文件 -->
+    <script src="test.js"></script>
+</head>
+<body>
+    <!-- 创建一个 Canvas 元素来显示图表 -->
+    <canvas id="myChart"></canvas>
+
+    <script>
+        // 在这里初始化和呈现图表
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, config);
+    </script>
+</body>
+</html>
