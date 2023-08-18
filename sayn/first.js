@@ -12,16 +12,18 @@ var datasetVisibility = {
 
 // 捕獲按鈕點擊事件
 var toggleButtons = document.querySelectorAll(".toggle-button");
-toggleButtons.forEach(function(button) {
+toggleButtons.forEach(function (button) {
     button.addEventListener("click", toggleDatasetVisibility);
 });
 
 function toggleDatasetVisibility(event) {
     var dataset = event.target.getAttribute("data-dataset");
     datasetVisibility[dataset] = !datasetVisibility[dataset];
-    
+
     switchChartData();
 }
+
+
 
 
 // Dummy data for the first chart (Replace this with actual data from your database)
