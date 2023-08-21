@@ -41,35 +41,40 @@ $(document).ready(function () {
             var datasets = [
                 {
                     label: "init_satisfied_1_1",
-                    data: [parseFloat(selectedData.init_satisfied_1_1)],
+                    data: visiable_bar[0] ? [parseFloat(selectedData.init_satisfied_1_1)] : [],
+                    // data: [parseFloat(selectedData.init_satisfied_1_1)],
                     backgroundColor: "rgba(75, 192, 192, 0.5)",
                     borderColor: "rgba(75, 192, 192, 1)",
                     borderWidth: 1
                 },
                 {
                     label: "MLB_satisfied_1_1",
-                    data: [parseFloat(selectedData.MLB_satisfied_1_1)],
+                    data: visiable_bar[1] ? [parseFloat(selectedData.MLB_satisfied_1_1)] : [],
+                    // data: [parseFloat(selectedData.MLB_satisfied_1_1)],
                     backgroundColor: "rgba(255, 205, 86, 0.5)",
                     borderColor: "rgba(255, 205, 86, 1)",
                     borderWidth: 1
                 },
                 {
                     label: "init_satisfied_0_6",
-                    data: [parseFloat(selectedData.init_satisfied_0_6)],
+                    data: visiable_bar[2] ? [parseFloat(selectedData.init_satisfied_0_6)] : [],
+                    // data: [parseFloat(selectedData.init_satisfied_0_6)],
                     backgroundColor: "rgba(255, 99, 132, 0.5)",
                     borderColor: "rgba(255, 99, 132, 1)",
                     borderWidth: 1
                 },
                 {
                     label: "MLB_satisfied_0_6",
-                    data: [parseFloat(selectedData.MLB_satisfied_0_6)],
+                    data: visiable_bar[3] ? [parseFloat(selectedData.MLB_satisfied_0_6)] : [],
+                    // data: [parseFloat(selectedData.MLB_satisfied_0_6)],
                     backgroundColor: "rgba(54, 162, 235, 0.5)",
                     borderColor: "rgba(54, 162, 235, 1)",
                     borderWidth: 1
                 },
                 {
                     label: "init_satisfied_0_1",
-                    data: [parseFloat(selectedData.init_satisfied_0_1)],
+                    data: visiable_bar[4] ? [parseFloat(selectedData.init_satisfied_0_1)] : [],
+                    // data: [parseFloat(selectedData.init_satisfied_0_1)],
                     backgroundColor: "rgba(255, 159, 64, 0.5)",
                     borderColor: "rgba(255, 159, 64, 1)",
                     borderWidth: 1
@@ -78,7 +83,8 @@ $(document).ready(function () {
 
                 {
                     label: "MLB_satisfied_0_1",
-                    data: [parseFloat(selectedData.MLB_satisfied_0_1)],
+                    data: visiable_bar[5] ? [parseFloat(selectedData.MLB_satisfied_0_1)] : [],
+                    // data: [parseFloat(selectedData.MLB_satisfied_0_1)],
                     backgroundColor: "rgba(153, 102, 255, 0.5)",
                     borderColor: "rgba(153, 102, 255, 1)",
                     borderWidth: 1
@@ -86,45 +92,45 @@ $(document).ready(function () {
             ];
 
 
-            if (!visiable_bar[0]) {
-                datasets[0].hidden = true;
-            } else {
-                datasets[0].hidden = false;
-            }
+            // if (!visiable_bar[0]) {
+            //     datasets[0].hidden = true;
+            // } else {
+            //     datasets[0].hidden = false;
+            // }
             
-            if (!visiable_bar[1]) {
-                datasets[1].hidden = true;
-            } else {
-                datasets[1].hidden = false;
-            }
-            
-            
-            if (!visiable_bar[2]) {
-                datasets[2].hidden = true;
-            } else {
-                datasets[2].hidden = false;
-            }
+            // if (!visiable_bar[1]) {
+            //     datasets[1].hidden = true;
+            // } else {
+            //     datasets[1].hidden = false;
+            // }
             
             
-            if (!visiable_bar[3]) {
-                datasets[3].hidden = true;
-            } else {
-                datasets[3].hidden = false;
-            }
+            // if (!visiable_bar[2]) {
+            //     datasets[2].hidden = true;
+            // } else {
+            //     datasets[2].hidden = false;
+            // }
             
             
-            if (!visiable_bar[4]) {
-                datasets[4].hidden = true;
-            } else {
-                datasets[4].hidden = false;
-            }
+            // if (!visiable_bar[3]) {
+            //     datasets[3].hidden = true;
+            // } else {
+            //     datasets[3].hidden = false;
+            // }
             
             
-            if (!visiable_bar[5]) {
-                datasets[5].hidden = true;
-            } else {
-                datasets[5].hidden = false;
-            }
+            // if (!visiable_bar[4]) {
+            //     datasets[4].hidden = true;
+            // } else {
+            //     datasets[4].hidden = false;
+            // }
+            
+            
+            // if (!visiable_bar[5]) {
+            //     datasets[5].hidden = true;
+            // } else {
+            //     datasets[5].hidden = false;
+            // }
 
 
             // 更新圖表
@@ -179,7 +185,9 @@ $(document).ready(function () {
                 indexAxis: 'y', // Set the axis to y for horizontal bars
                 scales: {
                     x: { // Use x scale for horizontal bars
-                        beginAtZero: true
+                        // beginAtZero: true,
+                        min: 0,
+                        max: 80,
                     }
                 },
                 animation: {

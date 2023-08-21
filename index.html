@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/3e91c276cc.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
 
     
     <style>
@@ -51,6 +52,49 @@
 
                 
 
+                
+                    <div class="dashout">
+                        <div class=" w3-card dash" style="height: 250px;">
+                            <div class="dashbar">
+                                <div class="dashbar-title">
+                                    Version
+                                </div>
+                            
+                            </div>
+
+                            <div id="current-index">
+                                <label for="resultSelect">Select Result:</label>
+                                <select id="resultID_select"></select>
+                                &emsp;&emsp;
+                                Current Data Index: <span id="index-value">1</span> <!-- 初始值設為 1，因為索引從 0 開始 -->
+                            </div>
+
+                            <div style="display: flex; width: 100%;">
+                                <div class="w3-container" style="width: 20%;">
+                                    <div class="button-container" style="flex-direction: column;">
+                                        <button class="toggle-button" data-dataset="Init Satisfied 1_1">Toggle Init Satisfied
+                                            1_1</button><br>
+                                        <button class="toggle-button" data-dataset="MLB Satisfied 1_1">Toggle MLB Satisfied
+                                            1_1</button><br>
+                                        <button class="toggle-button" data-dataset="Init Satisfied 0_6">Toggle Init Satisfied
+                                            0_6</button><br>
+                                        <button class="toggle-button" data-dataset="MLB Satisfied 0_6">Toggle MLB Satisfied
+                                            0_6</button><br>
+                                        <button class="toggle-button" data-dataset="Init Satisfied 0_1">Toggle Init Satisfied
+                                            0_1</button><br>
+                                        <button class="toggle-button" data-dataset="MLB Satisfied 0_1">Toggle MLB Satisfied 0_1</button>
+                                    </div>
+                                </div>
+                                <div style="width: 73%;">
+                                    <canvas id="chart"></canvas>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
 
 
 
@@ -134,5 +178,7 @@
 
 </html>
 
+
+<script src="sayn/first.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="res/dashboard.js"></script>
