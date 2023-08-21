@@ -1,7 +1,10 @@
+
 $(document).ready(function () {
     // Event listener for the resultID_select dropdown
     $("#resultID_select").on("change", function () {
         var selectedResultID = $(this).val();
+        $.get("/getresultdata", { resultID: selectedResultID }, function (data) {
+            console.log(data); // 添加这行来查看获取的数据内容
         var currentIndex = 0;
         // Send an AJAX request to the server to fetch the data for the selected resultID
         $.ajax({
