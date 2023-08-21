@@ -25,8 +25,6 @@ $(document).ready(function () {
                 $("#resultID_select").val(selectedResultID).trigger("change");
                 currentIndex = (currentIndex + 1) % resultIDs.length;
             }
-            // 更新圖表
-            // displayBarChart(datasets);
         }
         setInterval(updateCharts, 2000);
 
@@ -91,50 +89,8 @@ $(document).ready(function () {
                 }
             ];
 
-
-            // if (!visiable_bar[0]) {
-            //     datasets[0].hidden = true;
-            // } else {
-            //     datasets[0].hidden = false;
-            // }
-            
-            // if (!visiable_bar[1]) {
-            //     datasets[1].hidden = true;
-            // } else {
-            //     datasets[1].hidden = false;
-            // }
-            
-            
-            // if (!visiable_bar[2]) {
-            //     datasets[2].hidden = true;
-            // } else {
-            //     datasets[2].hidden = false;
-            // }
-            
-            
-            // if (!visiable_bar[3]) {
-            //     datasets[3].hidden = true;
-            // } else {
-            //     datasets[3].hidden = false;
-            // }
-            
-            
-            // if (!visiable_bar[4]) {
-            //     datasets[4].hidden = true;
-            // } else {
-            //     datasets[4].hidden = false;
-            // }
-            
-            
-            // if (!visiable_bar[5]) {
-            //     datasets[5].hidden = true;
-            // } else {
-            //     datasets[5].hidden = false;
-            // }
-
-
             // 更新圖表
-            displayBarChart(datasets);
+            displaySatisfied(datasets);
 
         });
 
@@ -163,14 +119,14 @@ $(document).ready(function () {
     });
 
     // 創建圖表函數
-    function displayBarChart(datasets) {
+    function displaySatisfied(datasets) {
         // Remove any existing chart in the chart-container
-        $("#bar_chart-container").empty();
+        $("#Satisfied-container").empty();
 
         // Create a canvas element to render the chart
         var canvas = document.createElement("canvas");
         canvas.id = "barChart";
-        $("#bar_chart-container").append(canvas);
+        $("#Satisfied-container").append(canvas);
 
         var ctx = canvas.getContext("2d");
 
@@ -353,3 +309,42 @@ function bar_vis(i) {
 
 }
 
+            // if (!visiable_bar[0]) {
+            //     datasets[0].hidden = true;
+            // } else {
+            //     datasets[0].hidden = false;
+            // }
+            
+            // if (!visiable_bar[1]) {
+            //     datasets[1].hidden = true;
+            // } else {
+            //     datasets[1].hidden = false;
+            // }
+            
+            
+            // if (!visiable_bar[2]) {
+            //     datasets[2].hidden = true;
+            // } else {
+            //     datasets[2].hidden = false;
+            // }
+            
+            
+            // if (!visiable_bar[3]) {
+            //     datasets[3].hidden = true;
+            // } else {
+            //     datasets[3].hidden = false;
+            // }
+            
+            
+            // if (!visiable_bar[4]) {
+            //     datasets[4].hidden = true;
+            // } else {
+            //     datasets[4].hidden = false;
+            // }
+            
+            
+            // if (!visiable_bar[5]) {
+            //     datasets[5].hidden = true;
+            // } else {
+            //     datasets[5].hidden = false;
+            // }

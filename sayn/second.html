@@ -31,6 +31,8 @@
             <label for="showDistribution">Show UE Distribution <br></label>
             <input type="checkbox" id="showThroughput" checked>
             <label for="showThroughput">Show BS Total Throughput <br></label>
+            <input type="checkbox" id="showSatisfied" checked>
+            <label for="showSatisfied">Show Satisfied <br></label>
 
         </div>
     </div>
@@ -67,6 +69,25 @@
             <div>
                 <canvas id="linear_chart-container"></canvas>
             </div>
+        </div>
+    </div>
+
+    <div id='Satisfied-chart' class="w3-third dashout">
+        <div class=" w3-card dash">
+            <div class="dashbar">
+                <div class="dashbar-title">
+                    Satisfied
+                </div>
+            </div>
+            <div class="w3-col">
+                <button id="oneBT" onclick="bar_vis(1)">one</button>
+                <button id="twoBT" onclick="bar_vis(2)">two</button>
+                <button id="threeBT" onclick="bar_vis(3)">third</button>
+                <button id="fourBT" onclick="bar_vis(4)">four</button>
+                <button id="fiveBT" onclick="bar_vis(5)">five</button>
+                <button id="sixBT" onclick="bar_vis(6)">six</button>
+            </div>
+            <div id="Satisfied-container"></div>
         </div>
     </div>
 
