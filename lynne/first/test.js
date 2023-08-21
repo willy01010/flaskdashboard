@@ -1,26 +1,3 @@
-// var mysql = require('mysql');
-
-// const express = require('express');
-// const app = express();
-
-
-// var con = mysql.createConnection({
-//     host: '127.0.0.1',
-//     user: 'root',
-//     password: '',
-//     database: 'mlb'
-// });
-
-
-// con.connect(function(err) {
-//     if (err) throw err;
-//     con.query("SELECT * FROM mlb_data", function (err, result, fields) {
-//       if (err) throw err;
-//       console.log(result);
-//     });
-//   });
-
-
 const express = require('express');
 const mysql = require('mysql');
 
@@ -33,16 +10,12 @@ const con = mysql.createConnection({
     database: 'mlb'
 });
 
-
 con.connect(function(err) {
     if (err) throw err;
-    con.query("SELECT * FROM mlb_data", function (err, result, fields) {
-      if (err) throw err;
-      console.log(result);
-    });
-  });
+    console.log('Connected to database');
+});
 
-app.use(express.static('public')); // Serve static files in the 'public' folder
+app.use(express.static('public'));
 
 app.get('/getdata', (req, res) => {
     const query = 'SELECT * FROM mlb_data';
@@ -56,9 +29,20 @@ app.get('/getdata', (req, res) => {
     });
 });
 
+app.get('/getresultdata', (req, res) => {
+    const resultID = req.query.resultID;
+    const query = 'SELECT * FROM mlb_result WHERE result_UE_BS_info_ID = ?';
+  
+    con.query(query, [resultID], (err, results) => {
+        if (err) {
+            res.status(500).send('Error fetching result data from the database');
+        } else {
+            res.json(results);
+        }
+    });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
-
-
