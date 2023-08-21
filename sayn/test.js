@@ -1,5 +1,3 @@
-// 在全局范围内定义 datasets 变量
-var datasets = [];
 $(document).ready(function () {
     // Load the MLB info from the JSON file
     $.getJSON("mlb_result.json", function (data) {
@@ -17,23 +15,13 @@ $(document).ready(function () {
         var currentIndex = 0;
 
         function updateCharts() {
-            // 在这里可以访问 datasets 变量
+            // 訪問 datasets 變量
             if (!isPaused) {
                 var selectedResultID = resultIDs[currentIndex];
                 $("#resultID_select").val(selectedResultID).trigger("change");
                 currentIndex = (currentIndex + 1) % resultIDs.length;
             }
-
-            // 根据 datasetVisibility 对象的状态，设置相应的可见性
-            for (var i = 0; i < datasets.length; i++) {
-                var dataset = datasets[i];
-                var label = dataset.label;
-                // 根据 label 执行某些操作
-                console.log("Label: " + label);
-            }
-
-
-            // 更新图表
+            // 更新圖表
             displayBarChart(datasets);
         }
         setInterval(updateCharts, 2000);
@@ -45,8 +33,8 @@ $(document).ready(function () {
                 (item) => item.result_UE_BS_info_ID === selectedResultID
             );
 
-            // 创建六个数据集，每个数据集都有自己的标签
-            datasets = [
+            // 創建六個數據集，每個數據集都有自己的標籤
+            var datasets = [
                 {
                     label: "init_satisfied_1_1",
                     data: [parseFloat(selectedData.init_satisfied_1_1)],
@@ -93,16 +81,16 @@ $(document).ready(function () {
                 }
             ];
 
-            // 更新图表
+            // 更新圖表
             displayBarChart(datasets);
 
         });
 
-        // 切换标签的按钮点击事件
+        // 切換標籤的按鈕點擊事件
         $(".button-container button").click(function () {
-            // 获取按钮的文本内容，即标签名
+            // 獲取按鈕的文本內容，即標籤名
             selectedLabel = $(this).text();
-            // 触发下拉菜单的改变事件，以重新渲染图表
+            // 觸發下拉菜單的改變事件，以重新渲染圖表
             $("#resultID_select").trigger("change");
         });
 
@@ -153,13 +141,5 @@ $(document).ready(function () {
                 }
             }
         });
-        // 获取所有数据集的可见性状态
-
-    }
-    var datasetVisibility = myChart.getDataVisibility();
-    // 遍历数据集可见性状态并打印出来
-    for (var datasetLabel in datasetVisibility) {
-        var isDatasetVisible = datasetVisibility[datasetLabel];
-        console.log("数据集 '" + datasetLabel + "' 可见性状态: " + isDatasetVisible);
     }
 });
