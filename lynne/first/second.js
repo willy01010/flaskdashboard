@@ -3,8 +3,6 @@ $(document).ready(function () {
     // Event listener for the resultID_select dropdown
     $("#resultID_select").on("change", function () {
         var selectedResultID = $(this).val();
-        $.get("/getresultdata", { resultID: selectedResultID }, function (data) {
-            console.log(data); // 添加这行来查看获取的数据内容
         var currentIndex = 0;
         // Send an AJAX request to the server to fetch the data for the selected resultID
         $.ajax({
@@ -22,6 +20,9 @@ $(document).ready(function () {
                 console.error("Error fetching data:", error);
             }
         });
+        $.get("/getresultdata", { resultID: selectedResultID }, function (data) {
+            console.log(data); // 添加这行来查看获取的数据内容
+
     });
         //CIO Table Chart
         var resultIDs = data[2].data.map((item) => item.result_UE_BS_info_ID);
