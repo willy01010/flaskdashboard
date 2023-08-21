@@ -1,3 +1,7 @@
+visiable_bar = [true, true, true, true, true, true]
+var one, two, three, four, five, six = true;
+
+
 $(document).ready(function () {
     // Load the MLB info from the JSON file
     $.getJSON("mlb_result.json", function (data) {
@@ -22,7 +26,7 @@ $(document).ready(function () {
                 currentIndex = (currentIndex + 1) % resultIDs.length;
             }
             // 更新圖表
-            displayBarChart(datasets);
+            // displayBarChart(datasets);
         }
         setInterval(updateCharts, 2000);
 
@@ -80,6 +84,48 @@ $(document).ready(function () {
                     borderWidth: 1
                 }
             ];
+
+
+            if (!visiable_bar[0]) {
+                datasets[0].hidden = true;
+            } else {
+                datasets[0].hidden = false;
+            }
+            
+            if (!visiable_bar[1]) {
+                datasets[1].hidden = true;
+            } else {
+                datasets[1].hidden = false;
+            }
+            
+            
+            if (!visiable_bar[2]) {
+                datasets[2].hidden = true;
+            } else {
+                datasets[2].hidden = false;
+            }
+            
+            
+            if (!visiable_bar[3]) {
+                datasets[3].hidden = true;
+            } else {
+                datasets[3].hidden = false;
+            }
+            
+            
+            if (!visiable_bar[4]) {
+                datasets[4].hidden = true;
+            } else {
+                datasets[4].hidden = false;
+            }
+            
+            
+            if (!visiable_bar[5]) {
+                datasets[5].hidden = true;
+            } else {
+                datasets[5].hidden = false;
+            }
+
 
             // 更新圖表
             displayBarChart(datasets);
@@ -143,3 +189,159 @@ $(document).ready(function () {
         });
     }
 });
+
+
+
+
+
+
+function bar_vis(i) {
+
+    // for(var k=0;k<6;k++){
+
+    if (i == 1) {
+
+        if (one) {
+
+            visiable_bar[0] = false//show
+
+            one = false
+
+            document.getElementById('oneBT').style = "background-color: aqua;"
+
+        } else {
+
+            visiable_bar[0] = true//hide
+
+            one = true
+
+            document.getElementById('oneBT').style = ""
+
+            document.getElementById('oneBT').class = ""
+
+        }
+
+    }
+
+    if (i == 2) {
+
+        if (two) {
+
+            visiable_bar[1] = false//show
+
+            two = false
+
+            document.getElementById('twoBT').style = "background-color: aqua;"
+
+        } else {
+
+            visiable_bar[1] = true//hide
+
+            two = true
+
+            document.getElementById('twoBT').style = ""
+
+            document.getElementById('twoBT').class = ""
+
+        }
+
+    }
+
+    if (i == 3) {
+
+        if (three) {
+
+            visiable_bar[2] = false//show
+
+            three = false
+
+            document.getElementById('threeBT').style = "background-color: aqua;"
+
+        } else {
+
+            visiable_bar[2] = true//hide
+
+            three = true
+
+            document.getElementById('threeBT').style = ""
+
+            document.getElementById('threeBT').class = ""
+
+        }
+
+    }
+
+    if (i == 4) {
+
+        if (four) {
+
+            visiable_bar[3] = false//show
+
+            four = false
+
+            document.getElementById('fourBT').style = "background-color: aqua;"
+
+        } else {
+
+            visiable_bar[3] = true//hide
+
+            four = true
+
+            document.getElementById('fourBT').style = ""
+
+            document.getElementById('fourBT').class = ""
+
+        }
+
+    }
+
+    if (i == 5) {
+
+        if (five) {
+
+            visiable_bar[4] = false//show
+
+            five = false
+
+            document.getElementById('fiveBT').style = "background-color: aqua;"
+
+        } else {
+
+            visiable_bar[4] = true//hide
+
+            five = true
+
+            document.getElementById('fiveBT').style = ""
+
+            document.getElementById('fiveBT').class = ""
+
+        }
+
+    }
+
+    if (i == 6) {
+
+        if (six) {
+
+            visiable_bar[5] = false//show
+
+            six = false
+
+            document.getElementById('sixBT').style = "background-color: aqua;"
+
+        } else {
+
+            visiable_bar[5] = true//hide
+
+            six = true
+
+            document.getElementById('sixBT').style = ""
+
+            document.getElementById('sixBT').class = ""
+
+        }
+
+    }
+
+}
+
