@@ -8,17 +8,22 @@
     include_once 'db.php';
 
     $data = array();
+    /*視情況加更多的query 及data array 以獲得更多資料 
+    ex. $query2 = "SELECT result_UE_BS_info_ID, w1 FROM mlb_result";
+    $runQuery2 = mysqli_query($conn, $query2);
+    */
 
     $query = "SELECT result_UE_BS_info_ID, w2 FROM mlb_result";
     $runQuery = mysqli_query($conn, $query);
 
+    /*每新增一筆runQuery就要再寫一個while loop */
     while ($row = mysqli_fetch_array($runQuery)) {
         $data[] = array(
             'result_UE_BS_info_ID' => $row['result_UE_BS_info_ID'],
             'w2' => $row['w2']
         );
     }
-
+    /*json 亦然 */
     $json_data = json_encode($data);
 ?>
 
@@ -56,6 +61,7 @@
 
             <script>
                 var ctx = document.getElementById("chart").getContext('2d');
+                /*在這裡新增要用的資料 */
                 var data = <?php echo $json_data; ?>;
                 var labels = data.map(item => item.result_UE_BS_info_ID);
                 var w2Data = data.map(item => item.w2);
