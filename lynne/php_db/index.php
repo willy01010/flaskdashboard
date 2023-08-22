@@ -2,6 +2,7 @@
 /*成功的話會顯示result_UE_BS_info_ID與w2的折線圖
 請負責圖表同學將當前的圖表資料來源換成本程式之作法 
 建議將所有的code都放在這裡
+http://127.0.0.1/final/lynne/php_db/index.php
 */
 
     /* Database connection settings */
